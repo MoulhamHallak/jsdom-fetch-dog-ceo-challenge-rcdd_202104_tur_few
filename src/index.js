@@ -1,13 +1,12 @@
-console.log('%c HI', 'color: firebrick')
 
-document.addEventListener("DOMContentLoaded", () => {
-function fetchPhotos() {
-  return fetch("https://dog.ceo/api/breeds/image/random/4")
-  .then(resp => resp.json())
-  .then(json => renderPhotos(json));
+let breedsArr = [];
+
+function fetchImages() {
+    const imgUrl = "https://dog.ceo/api/breeds/image/random/4";
+    fetch(imgUrl)
+    .then(response => response.json())
+    .then(json => renderImg(json.message));
 }
-console.log(json)
-});
 
 function renderImg(images) {
     const imgDiv = document.getElementById("dog-image-container");
